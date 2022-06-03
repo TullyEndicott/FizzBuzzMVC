@@ -26,12 +26,19 @@ namespace FizzBuzzMVC.Controllers
         [HttpGet]
         public IActionResult FBPage()
         {
-            FizzBuzz model = new();
+            FizzBuzz model = new(); //model is new FizzBuzz
 
             model.FizzValue = 3;
             model.BuzzValue = 5;
 
-            return View(model);
+            return View(model); //passes data into view FBPage
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult FBPage(FizzBuzz fizzbuzz)
+        {
+            return View(fizzbuzz);
         }
 
         public IActionResult Privacy()

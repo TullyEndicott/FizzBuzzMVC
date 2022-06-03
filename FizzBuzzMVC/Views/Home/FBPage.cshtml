@@ -1,5 +1,5 @@
 ﻿@model FizzBuzzMVC.Models.FizzBuzz
-
+<!--Lower case model when declared-->
 
         <div class="container col-xxl-8 px-4 py-5 mt-5">
             <div class="row gy-2 h-100 row cols-1 row-cols-md-2">
@@ -32,7 +32,7 @@
                             <input type="number" asp-for="FizzValue" class="form-control" placeholder="Enter Fizz" value="@Model.FizzValue"/>
                         </div>
                         <div class="form-group">
-                            <label asp-for="BuzzValue">BUzzValue</label>
+                            <label asp-for="BuzzValue">BuzzValue</label>
                             <input type="number" asp-for="BuzzValue" class="form-control" placeholder="Enter Buzz" value="@Model.BuzzValue" />
                         </div>
                         <!--Buttons **************************-->
