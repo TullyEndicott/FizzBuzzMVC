@@ -1,0 +1,62 @@
+﻿@model FizzBuzzMVC.Models.FizzBuzz
+
+
+        <div class="container col-xxl-8 px-4 py-5 mt-5">
+            <div class="row gy-2 h-100 row cols-1 row-cols-md-2">
+                <div class="col-12 col-lg-4 border-end border-2">
+                    <h1 class="fw-bold 1h-1 mb-3">FIZZBUZZ: A Coding Project</h1>
+                        <p>
+                            Two numbers are entered representing "Fizz" and "Buzz".<br>
+                            The "Fizz" number is usually smaller than the "Buzz".
+                        </p>
+                        This application will consider the two numbers entered and for each number between 1 and 100.<br />
+                        It will print <strong>"Fizz" </strong> for numbers divisible without remainder by the first number.<br>
+                        <stong>"Buzz"</stong> will be printed for for number divisible without remainder by the second number.<br>
+                        <strong>"FizzBuzz"</strong> will be printed for numbers divisible by both both numbers.<br />
+                        It will simply print numbers not divisible by either.
+                    
+                    <h2 class="mt-5 border-top border-2">Instructions</h2>
+                    <p>
+                        Enter "Fizz" and "Buzz" values into the input boxes.<br />
+                        The first number will be used to evaluate Fizz.<br />
+                        The second number will be used to evaluate Buss.<br />
+                        FizzBuzz will be deternined based on the combination of the two numbers.
+                    </p>
+                    <p>Press the <span class="text-white bg-success">'Start'</span> button and the values will appear.</p>
+                    <p>Press the <span class="text-white bg-danger">'Reset'</span> button to start again.</p>  
+                </div>
+                <div class="col-12 col-lg-8">
+                    <form asp-controller="Home" asp-action="FBPage" method="post">
+                        <div class="form-group">
+                            <label asp-for="FizzValue">FizzValue</label>
+                            <input type="number" asp-for="FizzValue" class="form-control" placeholder="Enter Fizz" value="@Model.FizzValue"/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BuzzValue">BUzzValue</label>
+                            <input type="number" asp-for="BuzzValue" class="form-control" placeholder="Enter Buzz" value="@Model.BuzzValue" />
+                        </div>
+                        <!--Buttons **************************-->
+                            <div class="row mt-2">
+                                <div class="col-6 d-flex justify-content-start">
+                                    <button id="btnStart" type="submit" class="btn btn-success btn-lg">Start</button>
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button id="btnReset" type="reset" class="btn btn-danger">Reset</button>                         
+                                </div>
+                            </div>
+                    </form>
+
+                        <h3 class="mt-5 border-bottom border-2">FIZZBUZZ Results</h3> 
+                        <div class="table-responsive">
+                            <table class="table table table-striped table-sm">
+                                <tbody id="results">
+                                    <!-- FIZZBUZZ results go here -->
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                </div>
+            </div>
+            
+        </div>
